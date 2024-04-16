@@ -1,0 +1,31 @@
+.chart-series-line {
+    -fx-stroke-width: 5px;
+}
+
+.default-color0.chart-series-line{
+    -fx-stroke: #6a75ab;
+}
+.default-color0.chart-line-symbol{
+    -fx-background-color: #6a75ab, #ffffff;
+    -fx-scale-x: 1.5;
+    -fx-scale-y: 1.5;
+}
+
+.chart{
+    -fx-font-size: 20;
+    -fx-font-family: "Avenir Next Demi Bold";
+}
+
+.default-color0.chart-line-symbol:hover{
+    -fx-background-color: #5164c4, #5164c4;
+    -fx-scale-x: 2;
+    -fx-scale-y: 2;
+}
+
+.tooltip{
+    -fx-background-radius: 15;
+    -fx-background-color: #737373;
+    -fx-opacity: 0.85;
+    -fx-font-size: 20;
+    -fx-font-family: "Avenir Next Demi Bold";
+}
