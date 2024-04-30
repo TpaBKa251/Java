@@ -1,0 +1,41 @@
+.menu-item:focused {
+    -fx-background-color:  #4a70f7;
+    -fx-background-radius: 25;
+}
+
+.menu-item {
+    -fx-pref-width: 333;
+    -fx-padding: 15;
+    -fx-cursor: hand;
+}
+
+.context-menu {
+    -fx-padding: 10;
+    -fx-background-radius: 25;
+    -fx-background-color: #ccc;
+    -fx-font-size: 20;
+    -fx-font-family: "Avenir Next Demi Bold";
+    -fx-opacity: 0.85;
+}
+
+.menu-button:hover{
+    -fx-opacity: 0.9
+}
+
+.menu-button:pressed{
+    -fx-scale-y: 0.95;
+    -fx-scale-x: 0.95;
+}
+
+
+.choice-box{
+    -fx-background-color: #ccc;
+    -fx-font-size: 20;
+    -fx-font-family: "Avenir Next Demi Bold";
+    -fx-background-radius: 15;
+    -fx-cursor: hand;
+}
+
+.choice-box:hover{
+    -fx-opacity: 0.9
+}

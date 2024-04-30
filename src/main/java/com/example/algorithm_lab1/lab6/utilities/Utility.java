@@ -1,10 +1,10 @@
 package com.example.algorithm_lab1.lab6.utilities;
-import javafx.animation.Animation;
-import javafx.animation.KeyFrame;
-import javafx.animation.KeyValue;
-import javafx.animation.Timeline;
+import com.example.algorithm_lab1.HelloApplication;
+import javafx.animation.*;
+import javafx.application.Platform;
 import javafx.beans.property.DoubleProperty;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
@@ -38,6 +38,8 @@ public class Utility {
         animation.setOnFinished(event -> {
             prevScene.hide();
         });
+
+        stage.setOnCloseRequest(windowEvent -> Platform.exit());
     }
 
     public static Animation getAnimationAppear(DoubleProperty property ) {
@@ -91,6 +93,34 @@ public class Utility {
                 scrollAnimation(scrollPane);
             }
         });
+    }
+
+    public static TranslateTransition getShift(Node node, String direction, float distance, float from, long duration){
+        TranslateTransition tt = new TranslateTransition(Duration.millis(duration), node);
+
+        switch (direction){
+            case "l":
+                tt.setFromX(0);
+                tt.setByX(-distance);
+                break;
+
+            case "r":
+                tt.setFromX(from);
+                tt.setByX(distance);
+                break;
+
+            case "u":
+                tt.setFromY(0);
+                tt.setByY(-distance);
+                break;
+
+            case "d":
+                tt.setFromY(0);
+                tt.setByY(distance);
+                break;
+        }
+
+        return tt;
     }
 }
 

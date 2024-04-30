@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="mainPane" onMouseEntered="#showTooltip" prefHeight="930.0" prefWidth="1680.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.algorithm_lab1.lab7.controllers.SequentialModelController">
+    <cursor>
+        <Cursor fx:constant="DEFAULT" />
+    </cursor>
+   <children>
+      <AnchorPane fx:id="pane" prefHeight="930.0" prefWidth="75.0" style="-fx-background-color: #262626;">
+         <children>
+            <Button fx:id="menuButton" layoutX="11.0" layoutY="11.0" mnemonicParsing="false" onAction="#mainMenu" prefHeight="54.0" prefWidth="54.0" style="-fx-background-color: #4a70f7; -fx-background-radius: 15;">
+               <tooltip>
+                  <Tooltip text="Главное меню" />
+               </tooltip>
+               <graphic>
+                  <ImageView fitHeight="37.0" fitWidth="37.0">
+                     <image>
+                        <Image url="@mainMenu.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="backButton" layoutX="11.0" layoutY="78.0" mnemonicParsing="false" onAction="#settings" prefHeight="54.0" prefWidth="54.0" style="-fx-background-color: #4a70f7; -fx-background-radius: 15;">
+               <tooltip>
+                  <Tooltip text="Назад" />
+               </tooltip>
+               <graphic>
+                  <ImageView fitHeight="37.0" fitWidth="37.0">
+                     <image>
+                        <Image url="@back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="play_or_pauseButton" layoutX="11.0" layoutY="178.0" mnemonicParsing="false" onAction="#playPause" prefHeight="54.0" prefWidth="54.0" style="-fx-background-color: #4a70f7; -fx-background-radius: 15;">
+               <tooltip>
+                  <Tooltip text="Плэй/Пауза" />
+               </tooltip>
+               <graphic>
+                  <ImageView fitHeight="37.0" fitWidth="37.0">
+                     <image>
+                        <Image url="@playPause.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="chartsButton" layoutX="11.0" layoutY="412.0" mnemonicParsing="false" onAction="#charts" prefHeight="54.0" prefWidth="54.0" style="-fx-background-color: #4a70f7; -fx-background-radius: 15;">
+               <tooltip>
+                  <Tooltip text="Показать/Спрятать диаграмму рабочих" />
+               </tooltip>
+               <graphic>
+                  <ImageView fitHeight="37.0" fitWidth="37.0">
+                     <image>
+                        <Image url="@barChart.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="speedUpButton" layoutX="11.0" layoutY="245.0" mnemonicParsing="false" onAction="#speedUp" prefHeight="54.0" prefWidth="54.0" style="-fx-background-color: #4a70f7; -fx-background-radius: 15;">
+               <tooltip>
+                  <Tooltip fx:id="speedUpTooltip" text="Увеличить скорость " />
+               </tooltip>
+               <graphic>
+                  <ImageView fitHeight="37.0" fitWidth="37.0">
+                     <image>
+                        <Image url="@speedUp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="speedDownButton" layoutX="11.0" layoutY="313.0" mnemonicParsing="false" onAction="#speedDown" prefHeight="54.0" prefWidth="54.0" style="-fx-background-color: #4a70f7; -fx-background-radius: 15;">
+               <tooltip>
+                  <Tooltip fx:id="speedDownTooltip" text="Уменьшить скорость" />
+               </tooltip>
+               <graphic>
+                  <ImageView fitHeight="37.0" fitWidth="37.0">
+                     <image>
+                        <Image url="@speedDown.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="chartsButton2" layoutX="11.0" layoutY="480.0" mnemonicParsing="false" onAction="#charts2" prefHeight="54.0" prefWidth="54.0" style="-fx-background-color: #4a70f7; -fx-background-radius: 15;">
+               <tooltip>
+                  <Tooltip text="Показать/Спрятать график динамики деталей" />
+               </tooltip>
+               <graphic>
+                  <ImageView fitHeight="37.0" fitWidth="37.0">
+                     <image>
+                        <Image url="@lineChart.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children></AnchorPane>
+      <BarChart fx:id="workersBarChart" animated="false" layoutX="83.0" layoutY="14.0" legendVisible="false" onMouseEntered="#showTooltip" opacity="0.0" prefHeight="908.0" prefWidth="1592.0" title="Диаграмма рабочих">
+        <xAxis>
+          <CategoryAxis label="Транспортер-Рабочий" side="BOTTOM">
+               <tickLabelFont>
+                  <Font name="Avenir Next Demi Bold" size="12.0" />
+               </tickLabelFont></CategoryAxis>
+        </xAxis>
+        <yAxis>
+          <NumberAxis label="Количество деталей у рабочего" side="LEFT">
+               <tickLabelFont>
+                  <Font name="Avenir Next Demi Bold" size="12.0" />
+               </tickLabelFont></NumberAxis>
+        </yAxis>
+      </BarChart>
+      <LineChart fx:id="cntSubComponents" animated="false" createSymbols="false" layoutX="83.0" layoutY="14.0" opacity="0.0" prefHeight="908.0" prefWidth="1592.0" title="Динамика деталей">
+         <xAxis>
+            <CategoryAxis label="Время, сек" side="BOTTOM" />
+         </xAxis>
+         <yAxis>
+            <NumberAxis label="Детали" side="LEFT" />
+         </yAxis>
+      </LineChart>
+      <Rectangle fx:id="rect" arcHeight="5.0" arcWidth="5.0" fill="#262626" height="83.0" layoutX="88.0" layoutY="14.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 50; -fx-arc-width: 50;" width="1581.0" />
+      <Text fx:id="information" fill="WHITE" layoutX="106.0" layoutY="45.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-stroke-width: 2;">
+         <font>
+            <Font name="Avenir Next Demi Bold" size="28.0" />
+         </font>
+      </Text>
+      <Text fx:id="information1" fill="WHITE" layoutX="106.0" layoutY="83.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font name="Avenir Next Demi Bold" size="28.0" />
+         </font>
+      </Text>
+   </children>
+   <stylesheets>
+      <URL value="@Style.css" />
+      <URL value="@lab7.css" />
+   </stylesheets>
+</AnchorPane>

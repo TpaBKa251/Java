@@ -1,0 +1,16 @@
+<project name="MyProject">
+
+    <taskdef name="jarbundler"
+             classname="net.sourceforge.jarbundler.JarBundler" />
+
+    <target name="bundle">
+
+        <jarbundler dir="release"
+                    name="Lab6"
+                    mainclass="HelloApplication"
+                    jar="Algorithm_Lab1_Lab6.jar"
+                     />
+
+    </target>
+
+</project>

@@ -14,6 +14,9 @@
 .chart{
     -fx-font-size: 20;
     -fx-font-family: "Avenir Next Demi Bold";
+    -fx-border-width: 5px;
+    -fx-border-color:  #262626;
+    -fx-border-radius: 25px;
 }
 
 .default-color0.chart-line-symbol:hover{
@@ -29,3 +32,12 @@
     -fx-font-size: 20;
     -fx-font-family: "Avenir Next Demi Bold";
 }
+
+.default-color0.chart-bar{
+    -fx-background-color: 'rgba(74, 112, 247, 0.5)';
+    -fx-background-radius: 10px;
+    -fx-border-width: 3px;
+    -fx-border-radius: 9px;
+    -fx-border-color:  #4a70f7;
+}
+

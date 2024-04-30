@@ -1,9 +1,10 @@
 package com.example.algorithm_lab1.lab6.dataStructures;
 
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Objects;
 
-public class Queue<T> {
+public class Queue<T> implements Serializable {
     // Поля
     private T[] queue;
     private int headIndex;
@@ -73,7 +74,32 @@ public class Queue<T> {
         headIndex = 0;
         length = 0;
         tailIndex = -1;
-        queue = (T[]) new Object[1_000_000];
+        queue = (T[]) new Object[10_000_000];
+    }
+
+    public T get(int index){
+        if (headIndex <= tailIndex && index < queue.length) {
+            return queue[index + headIndex];
+        }
+        else {
+            if (index >= headIndex && index < queue.length){
+                return queue[index + headIndex];
+            }
+            else {
+                return queue[index];
+            }
+            /*for (int i = headIndex; i < queue.length; i++) {
+                s += queue[i].toString() + ", ";
+            }
+
+            for (int i = 0; i < tailIndex + 1; i++) {
+                s += queue[i].toString();
+
+                if (i != tailIndex) {
+                    s += ", ";
+                }
+            }*/
+        }
     }
 
     @Override
@@ -105,8 +131,8 @@ public class Queue<T> {
             }
         }
 
-        return "Очередь: " + s +
-                ", голова = " + queue[headIndex];
+        return "Очередь: " + s;
+                /*", голова = " + queue[headIndex];*/
     }
 
     @Override
